@@ -1,0 +1,18 @@
+
+EXEC = multiply
+
+SRC = multiply.cpp
+
+all: $(EXEC)
+
+$(EXEC): $(SRC)
+	g++ -o $(EXEC) $(SRC)
+
+dump: $(EXEC)
+	objdump -d $(EXEC) > $(EXEC).asm
+
+clean:
+	rm -f $(EXEC) $(EXEC).asm
+
+run: $(EXEC)
+	./$(EXEC)
